@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "author": "Alessandro Mecella",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 60, "left": 0, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -246.17, "left": -32, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -104.1,
+      "left": 351.1,
+      "attrs": { "distance": "2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 351.8,
+      "left": 144,
+      "attrs": { "color": "red", "label": "Input" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 150,
+      "left": -180,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:A", "uno:5V", "red", [ "v28.8", "h-192.1", "v412.8", "h211.2", "v-74.9" ] ],
+    [ "lcd1:K", "uno:GND.1", "black", [ "v163.2", "h-28.5" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "cyan", [ "v288", "h-259.2", "v-26.9" ] ],
+    [ "ultrasonic1:TRIG", "uno:8", "magenta", [ "v57.6", "h-259.4" ] ],
+    [ "ultrasonic1:ECHO", "uno:9", "orange", [ "v48", "h-279.4" ] ],
+    [ "ultrasonic1:GND", "uno:GND.3", "purple", [ "v355.2", "h-273.4" ] ],
+    [ "btn1:2.r", "uno:A0", "blue", [ "h115.4", "v-76.6", "h-118.4" ] ],
+    [ "btn1:1.l", "uno:GND.2", "black", [ "h-76.8", "v-57.6", "h102.3" ] ],
+    [ "bz1:2", "uno:A1", "gold", [ "v102", "h360.5" ] ],
+    [ "bz1:1", "uno:GND.3", "#8f4814", [ "v54", "h332" ] ],
+    [ "lcd1:VSS", "uno:GND.1", "white", [ "v115.2", "h115.5" ] ],
+    [ "lcd1:VDD", "uno:5V", "green", [ "v124.8", "h-57.5", "v307.2", "h192", "v-48", "h16" ] ],
+    [
+      "lcd1:V0",
+      "uno:GND.3",
+      "orange",
+      [ "v144", "h-48.3", "v393.6", "h297.6", "v-134.4", "h-86.4" ]
+    ],
+    [ "uno:12", "lcd1:RS", "violet", [ "v-49.8", "h-105.7" ] ],
+    [ "lcd1:RW", "uno:GND.1", "green", [ "v96", "h67.1", "v19.2", "v69" ] ],
+    [ "lcd1:E", "uno:11", "blue", [ "v86.4", "h86.4" ] ],
+    [ "lcd1:D0", "uno:2", "green", [ "v9.6", "h0.1" ] ],
+    [ "lcd1:D1", "uno:3", "yellow", [ "v38.4", "h-0.3" ] ],
+    [ "lcd1:D2", "uno:4", "purple", [ "v48", "h143.8" ] ],
+    [ "lcd1:D3", "uno:5", "gray", [ "v57.6", "h124.7" ] ],
+    [ "lcd1:D4", "uno:6", "orange", [ "v67.2", "h105.6", "v9.6" ] ],
+    [ "lcd1:D5", "uno:7", "cyan", [ "v76.8", "h86.5" ] ],
+    [ "lcd1:D6", "uno:10", "#8f4814", [ "v115.2", "h38.6" ] ],
+    [ "lcd1:D7", "uno:13", "gold", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
